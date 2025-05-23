@@ -1,34 +1,28 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
+import logoImg from "./assets/logo.png";
+
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+     <div>
+         <main className='container'>
+            <img className='logo' src={logoImg} alt="Logo calculadora de gasolina ou alcohl" title='Logo'/>
+            <h1 className='title'>Qual a melhor Opção?</h1>
+
+            <form className='form'>
+                 <label htmlFor="">Alcool (preco / litro): </label>
+                   <input className='input' type="number" placeholder='4,90' min={1} step={0.01} required/>
+
+                  <label htmlFor="">Gasolina (preco / litro): </label>
+                   <input className='input' type="number" placeholder='4,90' min={1} step={0.01} required/>
+
+                 <input type="submit" className='button ' value="Calcular" />
+            </form>
+         </main>
+     </div>
   )
 }
 
